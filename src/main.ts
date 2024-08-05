@@ -1,5 +1,10 @@
-import './styles.scss';
-import { App } from "./App";
+import { router } from "./router";
+import "./styles.css";
 
-document.addEventListener("DOMContentLoaded", App);
-window.addEventListener("hashchange", App);
+const $root = document.getElementById('root');
+
+if (!$root) {
+  throw new Error('No encontrado');
+}
+
+router();

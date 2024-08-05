@@ -1,14 +1,4 @@
-export interface ILogin {
-  email: string,
-  password: string
-}
-
-export interface ILoginResponse {
-  message: string;
-}
-
-export interface ISignUpResponse {
+export interface BodyRequestLogin {
   email: string;
   password: string;
-  id: number;
 }

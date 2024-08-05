@@ -39,6 +39,7 @@
     "esprima": "^4.0.1",
     "esutils": "^2.0.3",
     "etag": "^1.8.1",
+    "express": "^4.16.4",
     "fill-range": "^7.1.1",
     "finalhandler": "^1.1.1",
     "forwarded": "^0.2.0",
@@ -118,7 +119,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",

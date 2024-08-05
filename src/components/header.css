@@ -1,0 +1,31 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100px;
+    color: black;
+}
+
+.header-title{
+    font-size: 80px;
+}
+
+.header-buttons{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn_header{
+    width: 130px;
+    height: 40px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    background-color: red;
+    transition: background-color 0.3s ease;
+}

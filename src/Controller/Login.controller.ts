@@ -1,51 +1,42 @@
-import { ILogin, ILoginResponse, ISignUpResponse } from "../Model/ILogin";
-import { errorAlert, successAlert } from "./Alerts";
+import { BodyRequestLogin } from "../Model/ILogin";
 
 export class LoginController {
-  url: string;
 
-  constructor(url: string) {
-    this.url = url;
-  }
+  async postLogin(data: BodyRequestLogin): Promise<void> {
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json'
+    }
 
-  async login(endPoint: string, user: ILogin): Promise<ILoginResponse> {
-    const response = await fetch(`${this.url}${endPoint}`, {
+    const reqOptions: RequestInit = {
       method: 'POST',
-      headers: {
-        'Content-type': 'Application/json'
-      },
-      body: JSON.stringify(user)
-    });
-
-    const data = await response.json();
-
-    console.log("Login status: " + response.status);
-    if (data.message !== "Login successful") {
-      // errorAlert("Correo electronico o contraseña erroneos")
-      throw new Error("Login: Correo electronico o contraseña erroneos")
+      headers: headers,
+      body: JSON.stringify(data)
     }
-    return data;
-  }
 
-  async signUp(endPoint: string, newUser: ILogin): Promise<ISignUpResponse> {
-    const response = await fetch(`${this.url}${endPoint}`, {
-      method: 'POST',
-      headers: {
-        'Content-type': 'Application/json'
-      },
-      body: JSON.stringify(newUser)
-    });
 
-    const data = await response.json();
+    const url = 'https://api-posts.codificando.xyz/auth/login';
+    const result = await fetch(url, reqOptions);
 
-    console.log("Sign upW status: " + response.status);
-    if (response.status !== 201) {
-      errorAlert("Correo ya se encuentra registrado");
-      throw new Error("Sign Up: Correo ya se encuentra registrado");
+    const response = await result.json();
+    const ResMessage = response.message;
+    console.log(response.message);
+
+    if (ResMessage === "Login successful") {
+      alert('Login exitoso');
+    } else if (ResMessage === "Invalid email or password") {
+      alert('Usuario o contraseña incorrecto');
+      throw new Error("Conexion fallida");
+    } else {
+      alert('Usuario o contraseña incorrecto');
+      throw new Error("Conexion fallida");
     }
-    else {
-      successAlert("Se creo usuario exitosamente");
-    }
-    return data;
+
+    const email = data.email;
+    sessionStorage.setItem('email', email);
+    // const token = userData.token;
+    // const id = userData.id;
+    // sessionStorage.setItem('id', id);
+    // sessionStorage.setItem('token', token);
+
   }
 }
