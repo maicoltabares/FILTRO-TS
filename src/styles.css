@@ -1,61 +1,57 @@
-/* login */
-
-/* Estilos para el contenedor del formulario */
 
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ocupa toda la altura de la vista */
-  background-color: gray; /* Color de fondo suave */
+  height: 100vh;
+  background-color: blanchedalmond;
 }
 
 .login-form, .register-form {
-  background-color: #fff; /* Fondo blanco para el formulario */
+  background-color: #fff; 
   padding: 20px;
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   width: 100%;
-  max-width: 400px; /* Ancho máximo del formulario */
-}
+  max-width: 600px; 
+  height: 400px;
 
 .form-label {
   display: block;
-  margin-bottom: 8px; /* Espacio debajo de la etiqueta */
+  margin-bottom: 8px;
   font-weight: bold;
   font-size:medium;
-  color: black;/* Negrita para las etiquetas */
+  color: black;
 }
 
 .form-input {
-  width: 100%; /* Ancho completo del campo de entrada */
+  width: 100%; 
   padding: 8px;
-  margin-bottom: 16px; /* Espacio debajo del campo de entrada */
-  border: 1px solid green; /* Borde gris claro */
-  border-radius: 4px; /* Bordes redondeados para los campos de entrada */
-  box-sizing: border-box; /* Incluye el padding y borde en el ancho total */
+  margin-bottom: 16px; 
+  border: 1px solid green; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
 }
 
 .form-input:focus {
-  border-color: #007bff; /* Color del borde al enfocar el campo */
-  outline: none; /* Quitar el contorno predeterminado del navegador */
+  outline: none; 
 }
 
 .form-button {
-  width: 100%; /* Ancho completo del botón */
+  width: 100%; 
   margin: 5px;
   padding: 10px;
-  background: linear-gradient(to right, black, black); /* Color de fondo azul */
-  color: #fff; /* Color del texto blanco */
-  border: none; /* Quitar el borde predeterminado */
-  border-radius: 4px; /* Bordes redondeados para el botón */
+  background: linear-gradient(to right, black, black); 
+  color: #fff; 
+  border: none;
+  border-radius: 4px; 
   font-size: 16px;
-  cursor: pointer; /* Cursor de mano al pasar sobre el botón */
-  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
 }
 
 .form-button:hover {
-  background-color: red; /* Color de fondo azul oscuro al pasar el cursor */
+  background-color: red; 
 }
 
 .form-title {
@@ -90,4 +86,4 @@
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
+}}
